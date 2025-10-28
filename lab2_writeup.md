@@ -26,7 +26,7 @@
 **Challenge**: Refactor the app to store data in an external database  
 **How I solve the Challenge**:
 - I use the agent mode in cursor to help me modify the code to use the Supabase cloud database, which guides me step by step to use the cloud database. I met several problems such as how to use the SUPABASE_DB_URL, in order to get the SUPABASE_DB_URL i read through the supabase document and tried many attempts to use the url finally i got everything set up.
-- Here is the screenshot that i asked the cursor to help me modify the project to use the cloud database: 
+- Here is the screenshot that i asked the cursor to help me modify the project to use the cloud database: ![Cursor Assistance](1.png)
 - Connection testing logs and attempts
 
 ### Vercel Deployment
