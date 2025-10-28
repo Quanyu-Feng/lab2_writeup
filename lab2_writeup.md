@@ -1,69 +1,75 @@
-# Lab 2 — Writeup
+# Project Reflection: Note-Taking App
 
-- Author: Quanyu-Feng
-- Date: 2025-10-25
-- Course / Project: [Add course or project name here]
-- Repository: Quanyu-Feng/lab2_writeup
+## Bugs Fixed
 
-## Objectives
-- Describe the goals of Lab 2.
-- List the tasks you were expected to complete.
-- State success criteria for the lab.
+### UI/UX Improvements
+- **Fixed size elements**: Note list and note context box now have a fixed size
+- **Title character limit**: Added validation for long titles without spaces
+- **Long title display**: Improved display of long titles in the note list
+- **Content formatting**: Fixed issue where multiple lines were combined - now properly separated
+- **Horizontal scroll**: Removed unnecessary horizontal scroll bar
+- **Save confirmation**: Added prompt asking users to save when starting a new note
+- **Delete button timing**: Delete buttons now show only after user saves the note
+- **Save button state**: Save button is disabled until there are new changes to the note
 
-## Environment
-- Operating System: [e.g., Ubuntu 22.04, macOS 14]
-- Tools / Languages: [e.g., Python 3.11, GCC 12, Docker]
-- Hardware (if applicable): [e.g., Raspberry Pi model, VM specs]
-- Repository commit / branch used: main
+## New Features Implemented
 
-## Setup / Installation
-1. Prerequisites:
-   - Package A
-   - Package B
-2. Installation steps:
-   - Step 1: ...
-   - Step 2: ...
-3. Commands used
-```bash
-# Example commands used during setup
-sudo apt update
-sudo apt install -y <package>
-```
+### Core Features
+- **Tags system**: Added comma-separated tags for note organization
+- **Event scheduling**: Added event date and event time fields
+- **AI translation**: Integrated AI translate button
+- **AI note generation**: Smart note generation that understands temporal context (like "tomorrow") and automatically updates event dates and times
 
-## Procedure
-- Step-by-step description of what you did during the lab.
-- Include commands, code snippets, and configuration changes.
+## Technical Challenges & Solutions
 
-Example:
-```bash
-# Example command used in the procedure
-python3 lab2_script.py --input data/input.txt --output results/out.txt
-```
+### Cloud Database Integration
+**Challenge**: Refactor the app to store data in an external database  
+**Solution**: 
+- Used agent mode in Cursor to guide step-by-step migration to Supabase cloud database
+- Learned to properly use `SUPABASE_DB_URL` through extensive documentation review
+- Multiple attempts and testing to establish successful database connection
 
-## Results
-- Present the output, logs, screenshots, or measurements.
-- Include relevant tables, figures, or sample outputs.
+**Evidence**:
+- Screenshots of Cursor assistance during database migration
+- Supabase cloud database documentation studied
+- Connection testing logs and attempts
 
-Example output:
-```
-[Paste terminal output or summarized results here]
-```
+### Vercel Deployment
+**Challenge**: Refactor app structure for successful deployment on Vercel cloud platform  
+**Solution**:
+- Adapted to Vercel's read-only filesystem (serverless architecture)
+- Removed directory creation and SQLite dependencies
+- Updated `main.py` to work with Supabase without local file operations
+- Created proper `vercel.json` configuration file
 
-## Analysis & Discussion
-- Interpret the results and compare them to expected behavior.
-- Explain any discrepancies, failures, or unexpected behavior.
-- Discuss performance, correctness, and limitations.
+### AI Integration
+**Challenge**: Implement LLM model for new AI features  
+**Solution**:
+- Followed lab instructions to deploy GitHub AI using GitHub token
+- Used Cursor to implement translate and note generation features
+- Integrated AI model with temporal understanding (dates like "tomorrow")
 
-## Troubleshooting & Lessons Learned
-- Problems encountered and how they were resolved.
-- Useful tips, commands, or references.
+## Technical Implementation
+
+### AI Features
+- **Translate button**: AI-powered translation functionality
+- **Smart note generation**: AI understands date context and auto-populates event timing
+- **Temporal awareness**: AI recognizes and processes date references like "tomorrow"
+
+## Lessons Learned
+
+### Development Process
+1. **AI-Assisted Development**: Learned to use AI models for step-by-step full-stack project generation
+2. **Problem Solving with AI**: Developed skills in describing bugs and issues effectively for AI troubleshooting
+3. **Cloud Deployment**: Gained experience deploying projects with cloud databases and model APIs
+4. **Project Publishing**: Understood the complete process from development to publication
+
+### Technical Skills
+- Cloud database integration and management
+- Serverless architecture constraints and solutions
+- AI model integration and API usage
+- Full-stack deployment workflows
 
 ## Conclusion
-- Short summary of whether the lab objectives were achieved.
-- Next steps or suggestions for future work.
 
-## References
-- Links to docs, papers, or websites used.
-
-## Appendix
-- Additional code snippets, configuration files, or raw data.
+This project provided comprehensive experience in modern web development practices, combining cloud infrastructure, AI integration, and responsive deployment strategies. The journey from local development to cloud deployment with AI features demonstrates the current state of full-stack development workflows.
