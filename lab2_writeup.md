@@ -24,14 +24,9 @@
 
 ### Cloud Database Integration
 **Challenge**: Refactor the app to store data in an external database  
-**Solution**: 
-- Used agent mode in Cursor to guide step-by-step migration to Supabase cloud database
-- Learned to properly use `SUPABASE_DB_URL` through extensive documentation review
-- Multiple attempts and testing to establish successful database connection
-
-**Evidence**:
-- Screenshots of Cursor assistance during database migration
-- Supabase cloud database documentation studied
+**How I solve the Challenge**:
+- I use the agent mode in cursor to help me modify the code to use the Supabase cloud database, which guides me step by step to use the cloud database. I met several problems such as how to use the SUPABASE_DB_URL, in order to get the SUPABASE_DB_URL i read through the supabase document and tried many attempts to use the url finally i got everything set up.
+- Here is the screenshot that i asked the cursor to help me modify the project to use the cloud database: 
 - Connection testing logs and attempts
 
 ### Vercel Deployment
