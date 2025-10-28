@@ -17,7 +17,7 @@
 ### Core Features
 - **Tags system**: Added comma-separated tags for note organization
 - **Event scheduling**: Added event date and event time fields
-- **AI translation**: Integrated AI translate button
+- **AI translation**: Integrated AI translate button that can translate the title and the context into select language
 - **AI note generation**: Smart note generation that understands temporal context (like "tomorrow") and automatically updates event dates and times
 
 ## Technical Challenges & Solutions
@@ -27,44 +27,23 @@
 **How I solve the Challenge**:
 - I use the agent mode in cursor to help me modify the code to use the Supabase cloud database, which guides me step by step to use the cloud database. I met several problems such as how to use the SUPABASE_DB_URL, in order to get the SUPABASE_DB_URL i read through the supabase document and tried many attempts to use the url finally i got everything set up.
 - Here is the screenshot that i asked the cursor to help me modify the project to use the cloud database: ![Cursor Assistance](1.png)
-- Connection testing logs and attempts
+- Here is the supbase cloud database documents i read:![Supabase Documents](2.png)
+- Here is the connection test i tried to connect with the supabase:![Connection Test](3.png)
 
 ### Vercel Deployment
 **Challenge**: Refactor app structure for successful deployment on Vercel cloud platform  
-**Solution**:
-- Adapted to Vercel's read-only filesystem (serverless architecture)
+**How I solve the Challenge**:
+- The Vercel uses a read-only filesystem (serverless), so i cannot create directories or use SQLite there, thus i Update main.py for Vercel (Remove directory creation when using Supabase) and Create vercel.json for proper Vercel configuration:![AI Features](4.png)
 - Removed directory creation and SQLite dependencies
 - Updated `main.py` to work with Supabase without local file operations
 - Created proper `vercel.json` configuration file
 
 ### AI Integration
 **Challenge**: Implement LLM model for new AI features  
-**Solution**:
-- Followed lab instructions to deploy GitHub AI using GitHub token
-- Used Cursor to implement translate and note generation features
-- Integrated AI model with temporal understanding (dates like "tomorrow")
-
-## Technical Implementation
-
-### AI Features
-- **Translate button**: AI-powered translation functionality
-- **Smart note generation**: AI understands date context and auto-populates event timing
-- **Temporal awareness**: AI recognizes and processes date references like "tomorrow"
+**How I solve the Challenge**:
+- I followed the lab instructions and easily deployed the github ai through the github token, then I used cursor to help me add a translate button and generate a note button by using the ai model. And also the AI model can understand what is the date of tomorrow:![Vercel Deployment](5.png), ![Final App](6.png)
 
 ## Lessons Learned
-
-### Development Process
-1. **AI-Assisted Development**: Learned to use AI models for step-by-step full-stack project generation
-2. **Problem Solving with AI**: Developed skills in describing bugs and issues effectively for AI troubleshooting
-3. **Cloud Deployment**: Gained experience deploying projects with cloud databases and model APIs
-4. **Project Publishing**: Understood the complete process from development to publication
-
-### Technical Skills
-- Cloud database integration and management
-- Serverless architecture constraints and solutions
-- AI model integration and API usage
-- Full-stack deployment workflows
-
-## Conclusion
-
-This project provided comprehensive experience in modern web development practices, combining cloud infrastructure, AI integration, and responsive deployment strategies. The journey from local development to cloud deployment with AI features demonstrates the current state of full-stack development workflows.
+1. I learned how to use the ai model to help me generate a full stack project step by step, and describe the bug and issue to let the ai model solve the problems.
+2. I learned how to deploy a project with a cloud database and a model api, which is a very helpful lesson that helps me know how to develop and publish a project.
+3. I learned how to write a Markdown file and insert images into it
